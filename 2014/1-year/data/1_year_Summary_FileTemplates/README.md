@@ -1,4 +1,4 @@
-Download and extract data/2014_1yr_Summary_FileTemplates.zip to this folder
+Download and extract `data/2014_1yr_Summary_FileTemplates.zip` to this folder
 
 link: http://www2.census.gov/programs-surveys/acs/summary_file/2014/data/
 
