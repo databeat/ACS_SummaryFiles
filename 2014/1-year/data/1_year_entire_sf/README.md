@@ -1,4 +1,4 @@
-Download and extract 1_year_entire_sf/All_Geographies.zip to this folder
+Download and extract `1_year_entire_sf/All_Geographies.zip` to this folder
 
 link: http://www2.census.gov/programs-surveys/acs/summary_file/2014/data/1_year_entire_sf/
 
