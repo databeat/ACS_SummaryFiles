@@ -1,7 +1,14 @@
 .idea/
 .idea/vcs.xml
-testing2014/
-testing2015/
+testing2014/data
+testing2014/documentation
+testing2014/output
+testing2015/1-year/data
+testing2015/1-year/documentation
+testing2015/1-year/output
+testing2015/5-year/data
+testing2015/5-year/documentation
+testing2015/5-year/output
 2014/1-year/data
 2014/1-year/output
 2014/1-year/documentation/user_tools/2014_1yr_SAS.zip
