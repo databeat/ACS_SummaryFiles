@@ -42,7 +42,7 @@ sequences = [
 #             94, # Transfer Programs (Food Stamps/SNAP)
              95, 96, 97, 98, 99, 100, 101, 102, # Employment Status
 #             103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, # Industry-Occupation-Class of Worker
-#             138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, # Housing
+             138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, # Housing
 #             149, # Group Quarters
              150, 151, 152, 153, 154, 155, 156, 157, 158, 159, # Health Insurance
              160, # Computer and Internet Usage
@@ -89,7 +89,7 @@ def getSeqHeader(seq, EorM):
     sheet = seqFile.sheet_by_name(EorM)
     numCols = sheet.ncols
     for col in range(numCols):
-        header.append(sheet.cell_value(1, col))
+        header.append(sheet.cell_value(0, col))
     header.insert(6, "GEOID")
     header.insert(7, "GEONAME")
     return header
@@ -108,7 +108,7 @@ def getSummaryData(seq, EorM, geo):
 
 def getGeoCodes(geo):
     geoCodes = []
-    inFileName = os.getcwd() + "/documentation/geography/1_year_Mini_Geo.xlsx"
+    inFileName = os.getcwd() + "/data/1_year_geo/1_year_Mini_Geo.xlsx"
     wb = oxl.load_workbook(filename = inFileName)
     sheet = wb[geo]
     rows = sheet.max_row
@@ -118,11 +118,11 @@ def getGeoCodes(geo):
         geoCodes.append([geoid, geoname])
     return geoCodes
 
-    
+
 def assemble(seq, EorM, geo, header, geoCodes, data):
     topic = topics[seq]
     number = str(seq).zfill(3)
-    outFileName = os.getcwd() + "/output/" + topic + "/" + geo.upper() + "_" + topic + "_" + number + EorM.lower() + ".csv"    
+    outFileName = os.getcwd() + "/output/" + topic + "/" + geo.upper() + "_" + topic + "_" + number + EorM.lower() + ".csv"
     with open(outFileName, 'w+', newline='') as outFile:
         writer = csv.writer(outFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(header)
@@ -136,6 +136,7 @@ def assemble(seq, EorM, geo, header, geoCodes, data):
 
 ############
 """ Main """
+
 topicAreas = getTopicAreas(sequences)
 
 ensureDirs(topicAreas)
