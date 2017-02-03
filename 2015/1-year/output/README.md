@@ -1,0 +1,1 @@
+Do not delete this folder. This is where the 1yrSummaryFileAssembler.py output will be stored.

@@ -1,0 +1,1 @@
+Do not delete this folder. This is where the 5yrSummaryFileAssembler.py output will be stored.
