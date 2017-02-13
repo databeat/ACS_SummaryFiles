@@ -17,7 +17,7 @@ from sortedcontainers import SortedDict
 """ Parameters """
 # Provide a list of sequences from ACS_1yr_Seq_Table_Number_Lookup.xls
 # Either provide your own list of sequences or simply comment out topic areas you do not need
-'''
+
 sequences = [
 #            1, # Unweighted Count
             2, 3, # Age-Sex
@@ -50,19 +50,15 @@ sequences = [
 #            118, # Quality Measures
 #            119, 120, 121, 122, # Imputations
             ]
-'''
-sequences = [2, 3, 66, 67]
+
 
 # Provide a list of geographies from 5yr_year_geo
-'''
-geos = ["al", "ak", "az", "ar", "ca", "co", "ct", "dc", "de", "fl", "ga", "hi",
+'''geos = ["al", "ak", "az", "ar", "ca", "co", "ct", "dc", "de", "fl", "ga", "hi",
         "id", "il", "in", "ia", "ks", "ky", "la", "me", "md", "ma", "mi", "mn",
         "ms", "mo", "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc", "nd", "oh",
         "ok", "or", "pa", "ri", "sc", "sd", "tn", "tx", "us", "ut", "vt", "va",
-        "wa", "wv", "wi", "wy"]
-'''
-geos = ['ca', 'dc', 'us', 'wy']
-
+        "wa", "wv", "wi", "wy"]'''
+geos = ['us']
 # Provide a choice of estimates, margins-of-error, or both
 # Note: these codes must by uppercase to match those in the Sequence files
 measures = ["E"]
@@ -550,3 +546,4 @@ for area in geos:
 for batch in batches:
     for measure in measures:
         writeTableTitleKey(batch, measure)
+        assembleAllStatesFile(batch, measure)
