@@ -1,0 +1,46 @@
+# Get Started
+
+Welcome to the **American Community Survey (ACS) - Foreign Birth** summary files. This dataset includes population estimates pertaining to the US Census **Foreign Birth** topic area.
+
+New users are strongly encouraged to review the `00_README.md` documentation before using this data source.
+
+## Summary File Dataset Structure
+
+Each Census Topic Area is divided into 57 separate CSV files -
+
+* 1 for each of the US states, Puerto Rico, and Washington D.C (52 total)
+* 3 USA files
+* 2 metadata records
+
+Users may download these files for offline analysis, but the real value of this new distribution format is in using the data.world query tool to join ACS estimates to users' own data.
+
+## Finding The Data You Need
+
+Users must consider 3 inputs to find the data they are looking for in the summary files:
+
+ 1. Topic Area
+ 2. Column IDs
+ 3. Summary Level or Geography
+
+### Topic Area
+data.world ACS Summary File datasets are already split across Topic Areas. This dataset focuses on the Foreign Birth topic area. If you are looking for another topic area, go back to [data.world/uscensusbureau](https://data.world/uscensusbureau) to find the one you are looking for. If you are looking for information regarding Nativity, Citizenship, and the Foreign Born, you are in the right place!
+
+Federated queries across multiple Topic Areas are possible with the data.world query tool. Please refer to the [data.world's SQL Tutorial](https://docs.data.world/tutorials/dwsql/#federated-queries) for more info.
+
+### Column IDs
+Column ID numbers are required to query the data using the data.world query tool. Experienced Census users will recognize these Column IDs from ACS data from other distribution channels like the Census API and ACS R package. Column IDs are opaque, coded column headers that offer a great shorthand for `SELECT`ing the estimates you need in a query, but new users will need to explore the metadata file `02_ColumnKey.csv` to determine the columns they need.
+
+The `02_ColumnKey.csv` metadata file is included as a machine-readable CSV so users can query it with the data.world query tool as well.
+
+### Summary Level or Geography
+All rows in the data.world ACS Summary File datasets are pre-geocoded. Geography codes like standard State Postal Abbreviations, State FIPS, County FIPS, Place FIPS, CBSA, ZCTA/ZIP, and Census GEOID codes are included to facilitate easy joining to users' own datasets. Experienced users may use the same Summary Levels available on other channels like the American FactFinder website. For more information about Summary Levels, please refer to the `00_README.md` documentation.
+
+With the exception of the **USA\_All\_States** files, the USA-level files do not contain geographies that are always entirely within a state, such as counties and places; for those data, go to the file for that state. ZIP Census Tabulation Areas are in the United States level (`USA_ZCTA.csv`), because some ZIP codes span more than one state.
+
+Multi-table selects across multiple state files are possible with the data.world query tool. Please refer to the [data.world's SQL Tutorial](https://docs.data.world/tutorials/dwsql/#multi-table-selects) for more info.
+
+### Tips and Notes
+
+* The `USA_All_States.csv` is provided for convenience so that users do not need to federate across all individual state files to return estimates for every state in the US.
+* Make your queries as selective as possible. Less selective queries will take longer to run and some may not return results at all due to the query timeout limit of 60 seconds. If you receive a `Network Error` upon querying the data, your query likely timed out and you should try a smaller slice of the data.
+* Most summary files are too wide to display in their entirety using data.world's fullscreen data table viewer. The data table viewer will stop displaying columns after the first 50. To view columns beyond the first 50, use the data.world query tool or download the file for offline analysis.
