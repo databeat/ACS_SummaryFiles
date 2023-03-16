@@ -1,5 +1,8 @@
 # ACS_SummaryFiles
 
+## PLEASE NOTE
+This is a really old repo, and I am archiving it now as I no longer need it and do not intend to maintain or re-write it to my current standards when writing software today. The most up-to-date version of this code belongs to data.world (https://github.com/datadotworld), where I worked when I made the tool. I am not sure if they have made that repo public or not, but you should contact them if you would like it. I'm choosing to archive this instead of deleteing it, because I do see a couple users have starred it in the past so someone may find it helpful as a starting point in assembling ACS files.
+
 ## Summary
 A project to develop a Python script for easily assembling large batches of American Community Survey (ACS) Summary Files.
 
